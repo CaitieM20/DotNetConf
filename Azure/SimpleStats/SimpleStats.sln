@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleStats.Storage", "SimpleStats.Storage\SimpleStats.Storage.csproj", "{A10C88BF-40A1-4620-8CA7-D33A93D5E410}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleStats.Engine", "SimpleStats.Data\SimpleStats.Engine.csproj", "{611B9471-3FE5-4421-8128-C8F632BA5D15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleStatsTest", "SimpleStatsTest\SimpleStatsTest.csproj", "{56B57674-7C98-4518-A16F-B0E3758A2219}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A10C88BF-40A1-4620-8CA7-D33A93D5E410}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A10C88BF-40A1-4620-8CA7-D33A93D5E410}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A10C88BF-40A1-4620-8CA7-D33A93D5E410}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A10C88BF-40A1-4620-8CA7-D33A93D5E410}.Release|Any CPU.Build.0 = Release|Any CPU
+		{611B9471-3FE5-4421-8128-C8F632BA5D15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{611B9471-3FE5-4421-8128-C8F632BA5D15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{611B9471-3FE5-4421-8128-C8F632BA5D15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{611B9471-3FE5-4421-8128-C8F632BA5D15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56B57674-7C98-4518-A16F-B0E3758A2219}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56B57674-7C98-4518-A16F-B0E3758A2219}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56B57674-7C98-4518-A16F-B0E3758A2219}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56B57674-7C98-4518-A16F-B0E3758A2219}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
