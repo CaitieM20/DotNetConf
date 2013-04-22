@@ -29,12 +29,18 @@ namespace SimpleStats.Storage
         public Int32 TotalDeaths { get; set; }
         public Int64 TotalSecondsPlayed { get; set; }
 
+
         public static PlayerEntity GetPlayerEntity(Int64 playerId)
         {
             var playerQuery = new TableQuery<PlayerEntity>().Where(TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, StorageManager.GetPlayerTablePartitionKey(playerId)));
         
             IEnumerable<PlayerEntity> results =StorageManager.Instance.PlayersTable.ExecuteQuery(playerQuery);
-            return results.FirstOrDefault();     
+            PlayerEntity entity = results.FirstOrDefault();
+
+            if (null == entity)
+                entity = new PlayerEntity(playerId);
+
+            return entity;
         }
     }
 }

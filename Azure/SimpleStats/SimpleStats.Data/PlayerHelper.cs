@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.WindowsAzure.Storage.Table;
 using SimpleStats.Storage;
 
-namespace SimpleStats.Data
+namespace SimpleStats.Engine
 {
     public class PlayerHelper
     {
@@ -17,17 +17,7 @@ namespace SimpleStats.Data
 
             //TODO: Get Player Row
             PlayerEntity player = PlayerEntity.GetPlayerEntity(playerId);
-
-            //Insert into batch operation.
-            if (null == player)
-            {
-                player = new PlayerEntity(playerId);
-                batchOperation.Insert(player);
-            }
-            else
-            {
-                batchOperation.Replace(player);
-            }
+            batchOperation.InsertOrReplace(player);
 
             //Update Player Entity with Game Data
             player.TotalDeaths += gameData.Deaths;
@@ -38,13 +28,16 @@ namespace SimpleStats.Data
             player.TotalSecondsPlayed += gameSeconds;
 
             //Create PlayerGame Row
-            PlayerGameEntity playerGame = new PlayerGameEntity(playerId, gameId);
-            playerGame.Points = gameData.Points;
-            playerGame.Win = gameData.Win;
-            playerGame.Kills = gameData.Kills;
-            playerGame.Deaths = gameData.Deaths;
-            playerGame.GameDuration = gameSeconds;
+            PlayerGameEntity playerGame = new PlayerGameEntity(playerId, gameId)
+            {
+                Points = gameData.Points,
+                Win = gameData.Win,
+                Kills = gameData.Kills,
+                Deaths = gameData.Deaths,
+                GameDuration = gameSeconds
+            };
             batchOperation.Insert(playerGame);
+        
 
             try
             {

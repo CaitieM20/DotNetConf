@@ -11,6 +11,8 @@ namespace SimpleStats.Storage
 {
     public class StorageManager
     {
+
+        private static readonly string StorageAccountString = "UseDevStorage=true";
         private static StorageManager _storageManager = null;     
         public static StorageManager Instance
         {
@@ -31,7 +33,7 @@ namespace SimpleStats.Storage
         private StorageManager()
         {
             // Retrieve the storage account from the connection string.
-            StorageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("StorageConnectionString"));
+            StorageAccount = CloudStorageAccount.Parse(StorageAccountString);
 
             // Create the table client.
             TableClient = StorageAccount.CreateCloudTableClient();
@@ -39,7 +41,7 @@ namespace SimpleStats.Storage
             // Create the table if it doesn't exist.
             PlayersTable = TableClient.GetTableReference("Players");
         }
-
+        
         public static string GetPlayerTablePartitionKey(Int64 playerId)
         {
             return String.Format("{0:x16}");
