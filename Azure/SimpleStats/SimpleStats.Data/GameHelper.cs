@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using SimpleStats.Storage;
 using Microsoft.WindowsAzure.Storage.Table;
 
-namespace SimpleStats.Data
+namespace SimpleStats.Engine
 {
     public static class GameHelper
     {

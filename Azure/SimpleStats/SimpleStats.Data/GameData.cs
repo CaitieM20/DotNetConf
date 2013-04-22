@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections;
 using System.Runtime.Serialization;
 
-namespace SimpleStats.Data
+namespace SimpleStats.Engine
 {
     [DataContract]
     public class GameData
